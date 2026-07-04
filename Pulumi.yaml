@@ -1,0 +1,16 @@
+name: kestrel-test
+runtime: yaml
+description: Kestrel Pulumi integration test project
+config:
+  revision:
+    type: string
+    default: v1
+resources:
+  pet:
+    type: random:RandomPet
+    properties:
+      prefix: kestrel
+outputs:
+  greeting: hello-from-kestrel
+  revision: ${revision}
+  petName: ${pet.id}
