@@ -2,18 +2,9 @@ name: kestrel-test
 runtime: yaml
 description: Kestrel Pulumi integration test project
 resources:
-  pet:
-    type: random:RandomPet
+  broken:
+    type: random:RandomPassword
     properties:
-      prefix: kestrel
-  driftTag:
-    type: pulumiservice:StackTag
-    properties:
-      organization: kestrel
-      project: kestrel-test
-      stack: dev
-      name: kestrel-drift-canary
-      value: present
+      length: -5
 outputs:
   greeting: hello-from-kestrel
-  petName: ${pet.id}
