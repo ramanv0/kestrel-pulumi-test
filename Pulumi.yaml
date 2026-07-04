@@ -1,3 +1,10 @@
 name: kestrel-test
-runtime: nodejs-bogus-runtime
-description: broken to force drift run failure
+runtime: yaml
+description: Kestrel Pulumi integration test project
+resources:
+  broken:
+    type: random:RandomPassword
+    properties:
+      length: -5
+outputs:
+  greeting: hello-from-kestrel
